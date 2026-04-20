@@ -3,7 +3,7 @@ import os
 import torch
 import torch.optim as optim
 import matplotlib.pyplot as plt
-
+from utils import show_batch
 
 
 def train_model(model,train_loader,val_loader,device):
@@ -29,6 +29,9 @@ def train_model(model,train_loader,val_loader,device):
                 }
                 for target in targets
             ]
+            #print("length of images:",len(images,))
+            
+            #show_batch(images, targets)
             optimizer.zero_grad()
             
             loss_dict = model(images,targets)
