@@ -25,8 +25,8 @@ def main():
     val_df = pd.read_csv(os.path.join(args.csv_dir,'val_df.csv'))
 
     # 2.Prepare Datasets
-    train_dataset =  ObjDetectionDataset(train_df, transform=build_train_transforms(args.image_size))
-    val_dataset = ObjDetectionDataset(val_df, transform=build_val_transforms(args.image_size))    
+    train_dataset =  ObjDetectionDataset(train_df, transforms=build_train_transforms(args.image_size))
+    val_dataset = ObjDetectionDataset(val_df, transforms=build_val_transforms(args.image_size))    
     
 
     #3. Creat Data loaders
